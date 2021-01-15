@@ -10,9 +10,7 @@ ENV TZ UTC
 # Set number of threads for parallel execution
 # By default, no parallelisation
 ENV ROBOT_THREADS 1
-# Define the default user who'll run the tests
-ENV ROBOT_UID 1000
-ENV ROBOT_GID 1000
+
 # Dependency versions
 ENV ALPINE_GLIBC 2.31-r0
 ENV CHROMIUM_VERSION 86.0
@@ -33,7 +31,7 @@ ENV XVFB_VERSION 1.20
 
 #Create User
 RUN addgroup robot && adduser -D -G robot robot \
-  && echo "robot ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
+  && echo "robot ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers 
 # Prepare binaries to be executed
 COPY bin/chromedriver.sh /home/robot/bin/chromedriver
 COPY bin/chromium-browser.sh /home/robot/bin/chromium-browser
