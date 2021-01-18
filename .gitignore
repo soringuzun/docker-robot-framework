@@ -2,10 +2,4 @@
 logs/
 reports/
 
-# Eclipse
-.settings/
-.project
 
-# IntelliJ
-.idea/
-*.iml
